@@ -1,41 +1,45 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { toast } from "react-toastify";
 
 const Login = () => {
-
-    const [id, setId] = useState("");
-    const [password, setPassword] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
+    const handleLogin = (e) => {
         e.preventDefault();
-        let regobj = { id, password };
-        //console.log(regobj);
-
-        fetch("http://localhost:3001/", {
-            method: "POST",
-            headers: { 'content-type': 'application/json' },
-            body: JSON.stringify(regobj)
-        }).then((res) => {
-            toast.success('Registered Sucessfully');
-            navigate('/home');
-        }).catch((err) => {
-            toast.error('Failed :' + err.message);
-        });
-
-    }
+        if (email && password) {
+            fetch('https://localhost:3000/users')
+                .then((res) => res.json())
+                .then((data) => {
+                    const user = data.find((u) => u.email === email && u.passorwd === password);
+                    if (user) {
+                        alert('Logged in');
+                        setError('');
+                        navigate('/home');
+                    } else {
+                        alert('error');
+                        setError('Invalid username or password');
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error fetching users:', error);
+                    setError('An error occurred while logging in');
+                });
+        }
+    };
 
     return (
         <div className='wrapper'>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleLogin}>
                 <h1>Login</h1>
                 <div className='input-box'>
-                    <input type='text' placeholder='Username' value={id} onChange={e => setId(e.target.value)} required />
+                    <input type='text' placeholder='Username' value={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className='input-box'>
-                    <input type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
+                    <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
                 <button type="submit">Login</button>
             </form>
