@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
@@ -11,18 +11,18 @@ const Login = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let regobj = {Email, password };
+        let regobj = { id, password };
         //console.log(regobj);
 
-        fetch("http://localhost:3001/",{
+        fetch("http://localhost:3001/", {
             method: "POST",
-            headers: {'content-type':'application/json'},
-            body:JSON.stringify(regobj)
-        }).then((res) =>{
-            toast.success('Registered Sucessfully')
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(regobj)
+        }).then((res) => {
+            toast.success('Registered Sucessfully');
             navigate('/home');
         }).catch((err) => {
-            toast.error('Failed :' +err.message);
+            toast.error('Failed :' + err.message);
         });
 
     }
@@ -32,7 +32,7 @@ const Login = () => {
             <form onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <div className='input-box'>
-                    <input type='text' placeholder='Username' value={id} onChange={e => setEmail(e.target.value)} required />
+                    <input type='text' placeholder='Username' value={id} onChange={e => setId(e.target.value)} required />
                 </div>
                 <div className='input-box'>
                     <input type='password' placeholder='Password' value={password} onChange={e => setPassword(e.target.value)} required />
