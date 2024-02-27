@@ -1,6 +1,6 @@
 {
     "users": [
-      { "id": "test@gmail.com", "password": 100 },
-      {  "id": "test1@gmail.com", "password": 200 }
+      { "email": "test@gmail.com", "password": 100 },
+      {  "email": "test1@gmail.com", "password": 200 }
     ]
   }

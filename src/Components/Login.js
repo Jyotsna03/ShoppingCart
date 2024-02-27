@@ -9,7 +9,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleLogin = (e) => {
-        e.preventDefault();
+        e.preventDefault(e);
         if (email && password) {
             fetch('https://localhost:3000/users')
                 .then((res) => res.json())
