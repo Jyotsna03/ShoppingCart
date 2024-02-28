@@ -1,0 +1,46 @@
+{
+    products : [
+      {
+        id:"",
+        name:"",
+        description: "",
+        price: 676,
+        memory: {
+          name : "8 GB",
+          value: "8gb"
+          
+        },
+        ssd: {
+          name: "512 Gb",
+          value : "512gb"
+        },
+        screen : "qhd",
+        color: "black"
+      }
+      ],
+      filters :[
+        {
+          displayname : "memory",
+          items :[
+            {name : "8 Gb",
+              value: "8gb"
+            }
+            ]
+          
+        },
+        {displayname: "ssd",
+          items: [
+            {
+              name: "512 Gb",
+              value: "512gb"
+            }]
+        },
+        {displayname: "screen",
+          items: [{name : "qhd", value: "qhd"}]
+        }
+        ]
+    
+    
+    
+    
+  }
