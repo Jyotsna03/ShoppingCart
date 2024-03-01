@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import * as reactRouterDom from 'react-router-dom';
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [error, setError] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [error, setError] = useState("");
 
-    const navigate = useNavigate();
+    const navigate = reactRouterDom.useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault(e);
@@ -18,7 +18,7 @@ const Login = () => {
                     if (user) {
                         alert('Logged in');
                         setError('');
-                        navigate('/home');
+                        navigate('/');
                     } else {
                         alert('error');
                         setError('Invalid username or password');

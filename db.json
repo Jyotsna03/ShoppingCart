@@ -2,5 +2,49 @@
     "users": [
       { "email": "test@gmail.com", "password": 100 },
       {  "email": "test1@gmail.com", "password": 200 }
-    ]
+    ],
+
+    "Products":[
+      {"ID" : 1,
+    "Name": "Lenovo IdeaPad",
+    "Image": "./images/img1.jpg",
+    "Desc": "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go. Embracing form, function, style, and fun, each Ideapad delivers responsive performance you can count on.",
+    "Price": 50000,
+    "memory": {
+      "name" : "Ryzen 7000",
+      "value": "8gb"
+    },
+    "SSD": {
+      "name": "256 GB",
+      "value" : "256gb"
+    },
+    "screen" : "Anti-Glare, Non-Touch",
+    "color": "Black"
+
+    
   }
+    ],
+    "filters" :[
+      {
+        "displayname" : "memory",
+        "items" :[
+          {"name" : "8 Gb",
+            "value": "8gb"
+          }
+          ]
+        
+      },
+      {"displayname": "ssd",
+        "items": [
+          {
+            "name": "512 Gb",
+            value: "512gb"
+          }]
+      },
+      {displayname: "screen",
+        items: [{name : "qhd", value: "qhd"}]
+      }
+      ]
+  }
+
+

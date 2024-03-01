@@ -17,8 +17,10 @@ const Product = () => {
                                 </div>
                                 <div className="detail">
                                     <div className="info">
-                                        
+                                        <h3>{curElm.Title}</h3>
+                                         <p>{curElm.Price}</p>   
                                     </div>
+                                    <button> View </button>
                                 </div>
                             </div>
                             
