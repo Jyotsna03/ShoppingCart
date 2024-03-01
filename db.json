@@ -38,11 +38,11 @@
         "items": [
           {
             "name": "512 Gb",
-            value: "512gb"
+            "value": "512gb"
           }]
       },
-      {displayname: "screen",
-        items: [{name : "qhd", value: "qhd"}]
+      {"displayname": "screen",
+        "items": [{"name" : "qhd", "value": "qhd"}]
       }
       ]
   }

@@ -1,26 +1,26 @@
 import React, { useState } from 'react';
-import * as reactRouterDom from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [error, setError] = useState('');
 
-    const navigate = reactRouterDom.useNavigate();
+    const navigate = useNavigate();
 
     const handleLogin = (e) => {
-        e.preventDefault(e);
+        e.preventDefault();
         if (email && password) {
             fetch('https://localhost:3000/users')
                 .then((res) => res.json())
                 .then((data) => {
-                    const user = data.find((u) => u.email === email && u.passorwd === password);
+                    const user = data.users.find((u) => u.email === email && u.password === password);
                     if (user) {
                         alert('Logged in');
                         setError('');
-                        navigate('/');
+                        navigate('/Product');
                     } else {
-                        alert('error');
+                        alert('User does not exist');
                         setError('Invalid username or password');
                     }
                 })
@@ -41,6 +41,7 @@ const Login = () => {
                 <div className='input-box'>
                     <input type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </div>
+                {error && <div className='error'>{error}</div>}
                 <button type="submit">Login</button>
             </form>
         </div>
