@@ -2,7 +2,7 @@
     "users": [
       { "email": "test@gmail.com", "password": 100 },
       {  "email": "test1@gmail.com", "password": 200 }
-    ],
+    ], 
 
     "Products":[
       {"ID" : 1,

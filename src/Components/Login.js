@@ -6,12 +6,12 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
 
-    const navigate = useNavigate();
+    let navigate = useNavigate();
 
     const handleLogin = (e) => {
         e.preventDefault();
         if (email && password) {
-            fetch('https://localhost:3000/users')
+            fetch('http://localhost:3000/users')
                 .then((res) => res.json())
                 .then((data) => {
                     const user = data.users.find((u) => u.email === email && u.password === password);

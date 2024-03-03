@@ -1,4 +1,5 @@
 import './Products.css';
+import { AiFillStar } from 'react-icons/ai';
 
 function Products() {
     return <>
@@ -8,7 +9,8 @@ function Products() {
             <div className='card-details'>
                 <h3 className='card-title'>Laptop</h3>
                 <section className='card-review'>
-                    <span className='total-reviews'></span>
+                    <AiFillStar/> <AiFillStar/> <AiFillStar/> <AiFillStar/>
+                    <span className='total-reviews'> 4 </span>
                 </section>
                 <section className='card-price'>
                     <div className='price'>

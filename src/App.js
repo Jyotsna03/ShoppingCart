@@ -1,15 +1,11 @@
 import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Login from './Components/Login';
-import Products from './Product/Products';
-import Navigation from './Navigation';
+import Products from './Components/Products';
+
 function App() {
   
     return (
       <div>
-        <>
-        <Navigation/>
-        <Products/>
-        </>
         <BrowserRouter>
         <Routes>
 
