@@ -2,12 +2,18 @@ import { BrowserRouter,Routes,Route} from 'react-router-dom';
 import Login from './Components/Login';
 import Products from './Components/Products';
 import Sidebar from './Sidebar/Sidebar';
+import Category from './Sidebar/Category/Category';
+import Nav from './Navigation/Nav';
+import 
 
 function App() {
   
     return (
       <div>
+        <Nav/>
         <Sidebar/>
+        <Category/>
+        
         <BrowserRouter>
         <Routes>
 

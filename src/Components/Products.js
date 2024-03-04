@@ -1,6 +1,7 @@
 import './Products.css';
 import { AiFillStar } from 'react-icons/ai';
 
+
 function Products() {
     return <>
     <section className='card-container'>
