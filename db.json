@@ -108,7 +108,7 @@
     ],
     "filters" :[
       {
-        "displayname" : "Laptop Brand",
+        "Category" : "Laptop Brand",
         "items" :[
           {"name" : "Laptop",
             "value": "Lenovo"
@@ -116,14 +116,14 @@
           ]
         
       },
-      {"displayname": "ssd",
+      {"Category": "ssd",
         "items": [
           {
             "name": "512 Gb",
             "value": "512gb"
           }]
       },
-      {"displayname": "screen",
+      {"Category": "screen",
         "items": [{"name" : "qhd", "value": "qhd"}]
       }
       ]

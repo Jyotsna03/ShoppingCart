@@ -1,12 +1,11 @@
 import './Sidebar.css';
-import Category from './Category/Category';
-import Price from './Pric'
 import React from 'react';
+import Category from './Category';
 
 
 function Sidebar () {
   return (
-    <div>Sidebar</div>
+    <><div>Sidebar</div><Category /></>
   )
 }
 export default Sidebar;
