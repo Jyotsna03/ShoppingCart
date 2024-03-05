@@ -34,7 +34,7 @@ const filters =[
 ]
 
 function App(props){
-  const arrayData = filters.map((filters) => 
+  const arrayData = filters.filter(item => ).map((filters) => 
   {
       return <li key={filters.id}>
         <p> {filters.LaptopName}</p>

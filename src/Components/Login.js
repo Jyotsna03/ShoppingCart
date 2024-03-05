@@ -7,6 +7,8 @@ const Login = () => {
     const [error, setError] = useState('');
 
     let navigate = useNavigate();
+// async await 
+//(async fetch('http://localhost:3000/users')).json
 
     const handleLogin = (e) => {
         e.preventDefault();
