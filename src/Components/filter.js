@@ -34,7 +34,7 @@ const filters =[
 ]
 
 function App(props){
-  const arrayData = filters.filter(item => ).map((filters) => 
+  const arrayData = filters.filter.map((filters) => 
   {
       return <li key={filters.id}>
         <p> {filters.LaptopName}</p>
@@ -45,6 +45,12 @@ function App(props){
       </li>;
     }
   )}
+
+  function MyComponent() {
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+    const [items, setItems] = useState([]);
+  }
 
   return (
     <div className="container">
