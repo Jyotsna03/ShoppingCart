@@ -33,35 +33,64 @@ const filters =[
         },
 ]
 
-function App(props){
-  const arrayData = filters.filter.map((filters) => 
-  {
-      return <li key={filters.id}>
-        <p> {filters.LaptopName}</p>
-        <p> {filters.Processor}</p>
-        <span> {filters.RAM}</span>
-        <span> {filters.SSD}</span>
-
-      </li>;
-    }
-  )}
 
   function MyComponent() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [items, setItems] = useState([]);
   }
+  useEffect(() => {
+    fetch("http://localhost:3000/product")
+        .then((res) => res.json())
+        .then(
+            (result) => {
+                setIsLoaded(true);
+                setItems(result);
+            },
 
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+            }
+        );
+}, []);
+
+if (error) {
+  return <>{error.message}</>;
+} else if (!isLoaded) {
+  return <>loading...</>;
+} else {
   return (
-    <div className="container">
-      <div>
-        <h1>Render List/Array of Items with Key</h1>
+      /* here we map over the element and display each item as a card  */
+  <div className=" card-container">
+          <ul className="card">
+              {filters.map((filter) => (
+                  <li>
+                      <article className="card" key={filters.LaptopName}>
+                          <div className="card-image">
+                              <img src={"my-app\public\images\img1.jpg"} />
+                          </div>
+                              <ol className="card-list">
+                                  <li>
+                                      Processor:{" "}
+                                      <span>{filters.Processor}</span>
+                                  </li>
+                                  <li>
+                                     <span>{filters.RAM}</span>
+                                  </li>
+                                  <li>
+                                     <span>{filters.SSD}</span>
+                                  </li>
+                              </ol>
+                          
+                      </article>
+                  </li>
+              ))}
+          </ul>
       </div>
-
-     
-      <ul>{arrayData}</ul>
-    </div>
   );
+}
+
 
 
 export default App;
