@@ -1,28 +1,28 @@
 import './Category.css';
 //
-function Category(){
+function Category() {
     return (
         <div>
             <h2 className='sidebar-title'> Category</h2>
 
             <div>
                 <label className='sidebar-label-container'>
-                    <input type ="checkbox" name = "test"/>
-                    < span className='checkmark'> </span> Lenovo laptop
+                    <input type="checkbox" name="test" />
+                    <span className='checkmark'> </span> Lenovo laptop
                 </label>
 
                 <label className='sidebar-label-container'>
-                    <input type ="checkbox" name = "test"/>
+                    <input type="checkbox" name="test" />
                     < span className='checkmark'> </span> DELL laptop
                 </label>
 
                 <label className='sidebar-label-container'>
-                    <input type ="checkbox" name = "test"/>
+                    <input type="checkbox" name="test" />
                     < span className='checkmark'> </span> HP laptop
                 </label>
 
                 <label className='sidebar-label-container'>
-                    <input type ="checkbox" name = "test"/>
+                    <input type="checkbox" name="test" />
                     < span className='checkmark'> </span> MacBook Pro
                 </label>
             </div>

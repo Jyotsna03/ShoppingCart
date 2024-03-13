@@ -1,52 +1,105 @@
+import axios from 'axios';
+import React, { useState, Link } from 'react';
 
-import React from 'react'
+import React from 'react';
 
 const Login = () => {
+
+    const [FormData, setFormData] = useState({
+        email: '',
+        password: ''
+    })
+
+    const [errors, setErrors] = useState({})
+    const [valid, setValid] = useState(true)
+
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        let isvalid = true;
+        let validationErrors = {}
+        if (FormData.email === "" || FormData.email === null) {
+            isvalid = false;
+            validationErrors.email = "Email required"
+        }
+
+        if (FormData.password === "" || FormData.password === null) {
+            isvalid = false;
+            validationErrors.password = "Password required"
+        }
+
+        setErrors(validationErrors)
+        setValid(isvalid)
+        axios.get('http://localhost:3000/users')
+            .then(result => {
+                let foundUser = result.data.find(user => user.email === FormData.email);
+                if (foundUser) {
+                    if (foundUser.password === FormData.password) {
+                        alert("Login successful");
+                        Link
+
+                    } else {
+                        isvalid = false;
+                        validationErrors.password = "Wrong password";
+                    }
+                } else {
+                    isvalid = false;
+                    validationErrors.email = "User not found";
+                }
+                setErrors(validationErrors);
+                setValid(isvalid);
+            })
+            .catch(err => console.log(err));
+
+
+
+    }
     return (
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="signup-form">
-                        <form class="mt-5 border p-4 bg-light shadow" onSubmit={handleSubmit}>
-                            <h4 class="mb-5 text-secondary">Login Page</h4>
+        <div className="container">
+            <div className="row">
+                <div className="col-md-6 offset-md-3">
+                    <div className="signup-form">
+                        <form className="mt-5 border p-4 bg-light shadow" onSubmit={handleSubmit}>
+                            <h4 className="mb-5 text-secondary">Login Page</h4>
                             {
                                 valid ? <></> :
                                     <span className='text-danger'>
                                         {errors.email}{errors.password}
                                     </span>
                             }
-                            <div class="row">
-                                <div class="mb-3 col-md-12">
+                            <div className="row">
+                                <div className="mb-3 col-md-12">
                                     <label>
-                                        Email <span class="text-danger">* </span>
+                                        Email <span className="text-danger">* </span>
                                     </label>
                                     <input
                                         type="email"
                                         name="email"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="Enter Email"
                                         autoComplete='off'
                                         onChange={(Event) => setFormData({ ...FormData, email: Event.target.value })}
                                     />
                                 </div>
                                 {/* Password*/}
-                                <div class="mb-3 col-md-12">
+                                <div className="mb-3 col-md-12">
                                     <label>
-                                        Password<span class="text-danger">*</span>
+                                        Password<span className="text-danger">*</span>
                                     </label>
                                     <input
                                         type="password"
                                         name="password"
-                                        class="form-control"
+                                        className="form-control"
                                         placeholder="Enter Password"
                                         onChange={(Event) => setFormData({ ...FormData, password: Event.target.value })}
                                     />
                                 </div>
-
-
+                                <div className="col-md-12">
+                                    <button className="btn btn-primary float-end"> Login </button>
+                                </div>
                             </div>
-
                         </form>
+
                     </div>
                 </div>
             </div>

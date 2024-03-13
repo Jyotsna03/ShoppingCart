@@ -1,26 +1,24 @@
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
 import Products from './Components/Products';
 
-import 
 
 function App() {
-  
-    return (
-      <div>
-        
-        <BrowserRouter>
-        <Routes>
 
-          <Route path = '/' Component = {Login}/> 
-          <Route path ='/product' Component={Products}/>
-          {/* <Route path = '/product' Component = {Product}/> */}
-  
+  return (
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' Component={Login} />
+          <Route path='/product' Component={Products} />
         </Routes>
-        </BrowserRouter>
-      </div>    
-    );
-  
+      </BrowserRouter>
+
+    </>
+
+
+  );
+
 }
 
 export default App;
