@@ -1,24 +1,59 @@
-import { useRef, useState, useEffect } from "react";
+
 import React from 'react'
 
-
-
 const Login = () => {
-    //adding react hooks
-    const userRef = useRef();
-    const errRef = useRef();
+    return (
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="signup-form">
+                        <form class="mt-5 border p-4 bg-light shadow" onSubmit={handleSubmit}>
+                            <h4 class="mb-5 text-secondary">Login Page</h4>
+                            {
+                                valid ? <></> :
+                                    <span className='text-danger'>
+                                        {errors.email}{errors.password}
+                                    </span>
+                            }
+                            <div class="row">
+                                <div class="mb-3 col-md-12">
+                                    <label>
+                                        Email <span class="text-danger">* </span>
+                                    </label>
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        class="form-control"
+                                        placeholder="Enter Email"
+                                        autoComplete='off'
+                                        onChange={(Event) => setFormData({ ...FormData, email: Event.target.value })}
+                                    />
+                                </div>
+                                {/* Password*/}
+                                <div class="mb-3 col-md-12">
+                                    <label>
+                                        Password<span class="text-danger">*</span>
+                                    </label>
+                                    <input
+                                        type="password"
+                                        name="password"
+                                        class="form-control"
+                                        placeholder="Enter Password"
+                                        onChange={(Event) => setFormData({ ...FormData, password: Event.target.value })}
+                                    />
+                                </div>
 
-    const [user,setUser] = useState('');
-    const [pwd,setPwd] = useState('');
-    const [errMsg, setErrMsg] = useState('');
-    
 
-  return (
-    <div>
+                            </div>
 
-        
+                        </form>
+                    </div>
+                </div>
+            </div>
+
         </div>
-  )
+    )
+
 }
 
 export default Login;
@@ -39,7 +74,7 @@ export default Login;
 //     const [error, setError] = useState('');
 
 //     let navigate = useNavigate();
-// // async await 
+// // async await
 // //(async fetch('http://localhost:3000/users')).json
 
 //     const handleLogin = (e) => {
