@@ -1,6 +1,7 @@
 import React from 'react'
 import { items } from './Data'
-
+import 'bootstrap/dist/css/bootstrap.css';
+import { Link } from 'react-router-dom';
 
 export const Product = () => {
     return (
@@ -11,9 +12,14 @@ export const Product = () => {
                         items.map((Product) => {
                             return (
                                 <>
-                                    <div className='col-lg-4'>
-
+                                    <div key={Product.ID} className="col-lg-4 mx">
                                         <div className="card" style={{ width: '18rem' }}>
+                                            <Link to={`/product/${Product.ID}`}
+                                                style={{
+                                                    display: 'flex',
+                                                    justifyContent: 'center',
+                                                    alignItems: 'center'
+                                                }} />
                                             <img src={Product.Image} ></img><div className="card-img-top" ></div>
 
                                             <div className="card-body">

@@ -1,18 +1,27 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './Components/Login';
-import Products from './Components/Products';
-import { Navbar } from './Components/Navbar';
+import Navbar from './Components/Navbar';
+
+import { Product } from './Components/Product';
+import { Productdetail } from './Components/Productdetail';
+import Cart from './Components/Cart';
 
 
 function App() {
 
   return (
     <>
-      <BrowserRouter>
 
+      <BrowserRouter>
+        <Navbar />
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/product' Component={<Products />} />
+          <Route path='/product' element={<Product />} />
+          <Route path='/product/:id' element={<Product />} />
+          <Route path='/cart' element={<Cart />} />
+
+
+
         </Routes>
       </BrowserRouter>
 

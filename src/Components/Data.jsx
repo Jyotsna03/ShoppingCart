@@ -21,8 +21,8 @@ export const items = [
     {
         ID: 2,
         Name: "Inspiron 14 2-in-1 Laptop",
-        Image: "https://www.digitaltrends.com/wp-content/uploads/2018/02/dell-xps-13-screen-lid1.jpg?fit=1500%2C1000&p=1",
-        Desc: "DELL LAPTOP",
+        Image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScPLOYTo5csjxItP9sKgPJ39pNUSDNkwlQS89bcEmEQg&s",
+        Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 63000,
         memory: {
             "name": "8 GB",
@@ -57,7 +57,7 @@ export const items = [
     {
         ID: 4,
         Name: "Lenovo IdeaPad",
-        Image: "https://www.reliancedigital.in/medias/Lenovo-IdeaPadSlim-LAptop-493838274-i-2-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxNDc4ODN8aW1hZ2UvanBlZ3xpbWFnZXMvaGRmL2g1MS8xMDA2MDIxOTgwOTgyMi5qcGd8ZDY1MzQwY2M1OTdjYTFkNTYyNzM0ZWIzYjg3YzQ5M2YyZjNkYjM1YzA2Y2Q5MTZkYWZmMDFmZWFlNTE2NWQwZg",
+        Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 50000,
         memory: {
@@ -91,7 +91,7 @@ export const items = [
     {
         ID: 6,
         Name: "ASUS VivoBook 15",
-        Image: "https://m.media-amazon.com/images/I/81KEmR1a33L.jpg",
+        Image: "https://images-eu.ssl-images-amazon.com/images/I/71c0GSxtEEL._AC_UL200_SR200,200_.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 26990,
         memory: {
