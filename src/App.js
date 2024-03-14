@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+
         <Routes>
-          <Route path='/' Component={Login} />
-          <Route path='/product' Component={Products} />
+          <Route path='/' element={<Login />} />
+          <Route path='/product' Component={<Products />} />
         </Routes>
       </BrowserRouter>
 

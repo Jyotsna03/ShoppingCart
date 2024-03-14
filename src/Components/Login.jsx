@@ -1,7 +1,6 @@
 import axios from 'axios';
 import React, { useState, Link } from 'react';
 
-import React from 'react';
 
 const Login = () => {
 
@@ -11,20 +10,22 @@ const Login = () => {
     })
 
     const [errors, setErrors] = useState({})
-    const [valid, setValid] = useState(true)
+    const [isvalid, setValid] = useState(true)
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        let isvalid = true;
+        console.log("submitted")
+
         let validationErrors = {}
         if (FormData.email === "" || FormData.email === null) {
-            isvalid = false;
+            ;
+            setValid(false);
             validationErrors.email = "Email required"
         }
 
         if (FormData.password === "" || FormData.password === null) {
-            isvalid = false;
+            setValid(false);
             validationErrors.password = "Password required"
         }
 
@@ -36,14 +37,14 @@ const Login = () => {
                 if (foundUser) {
                     if (foundUser.password === FormData.password) {
                         alert("Login successful");
-                        Link
+
 
                     } else {
-                        isvalid = false;
+                        setValid(false);
                         validationErrors.password = "Wrong password";
                     }
                 } else {
-                    isvalid = false;
+                    setValid(false);
                     validationErrors.email = "User not found";
                 }
                 setErrors(validationErrors);
@@ -62,7 +63,7 @@ const Login = () => {
                         <form className="mt-5 border p-4 bg-light shadow" onSubmit={handleSubmit}>
                             <h4 className="mb-5 text-secondary">Login Page</h4>
                             {
-                                valid ? <></> :
+                                isvalid ? <></> :
                                     <span className='text-danger'>
                                         {errors.email}{errors.password}
                                     </span>
@@ -133,7 +134,7 @@ export default Login;
 //     const handleLogin = (e) => {
 //         e.preventDefault();
 //         if (email && password) {
-//             fetch('http://localhost:3000/users')
+//             fetch('/users')
 //                 .then((res) => res.json())
 //                 .then((data) => {
 //                     const user = data.users.find((u) => u.email === email && u.password === password);
