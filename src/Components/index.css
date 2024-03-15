@@ -17,9 +17,10 @@
 
 }
 .cart{
-    width:20%;
-    text-align: center;
+    width:30%;
+    text-align:justify;
     font-weight: bolder;
+    font-size:1.5rem;
     text-decoration: none;
     color:white;
 }

@@ -1,5 +1,4 @@
 export const items = [
-
     {
         ID: 1,
         Name: "Lenovo IdeaPad",
@@ -17,7 +16,6 @@ export const items = [
         "screen": "Anti-Glare, Non-Touch",
         "color": "Black"
     },
-
     {
         ID: 2,
         Name: "Inspiron 14 2-in-1 Laptop",
@@ -34,8 +32,6 @@ export const items = [
         },
         color: "Platinum Silver",
         processor: "Intel i7"
-
-
     },
     {
         ID: 3,
@@ -105,4 +101,4 @@ export const items = [
         screen: "Anti-Glare, Non-Touch",
         color: "Pentium Silver"
     }
-]
+];
