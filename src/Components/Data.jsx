@@ -1,4 +1,4 @@
-export const items = [
+const items = [
     {
         ID: 1,
         Name: "Lenovo IdeaPad",
@@ -102,3 +102,56 @@ export const items = [
         color: "Pentium Silver"
     }
 ];
+
+const filters = [
+    {
+        id: 1,
+        LaptopName: 'Lenovo',
+        Price: 50000,
+        RAM: '8gb',
+        SSD: '256GB'
+
+    },
+    {
+        id: 2,
+        LaptopName: 'DELL',
+        Price: 63000,
+        RAM: '16gb',
+        SSD: '1TB'
+
+    },
+    {
+        id: 3,
+        LaptopName: 'Lenovo',
+        Price: 35000,
+        RAM: '8gb',
+        SSD: '512GB'
+
+    },
+    {
+        id: 4,
+        LaptopName: 'Lenovo',
+        Price: 50000,
+        RAM: '16gb',
+        SSD: '512GB'
+
+    },
+    {
+        id: 5,
+        LaptopName: 'Lenovo',
+        Price: 36000,
+        RAM: '8gb',
+        SSD: '512GB'
+
+    },
+    {
+        id: 6,
+        LaptopName: 'Asus',
+        Price: 26900,
+        RAM: '8gb',
+        SSD: '1TB'
+
+    }
+]
+
+export { items, filters };

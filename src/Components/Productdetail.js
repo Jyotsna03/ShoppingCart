@@ -1,18 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { items } from './Data'; // Assuming 'items' is exported from './Data'
+import { items } from './Data';
+import 'bootstrap/dist/css/bootstrap.css';
+
 
 function Productdetail() {
     const { id } = useParams();
     const [Product, setProduct] = useState({});
 
     useEffect(() => {
-        // Find the product with the specified ID
+
         const filterProduct = items.find((Product) => Product.ID === parseInt(id));
         if (filterProduct) {
             setProduct(filterProduct);
         } else {
-            setProduct(null); // Handle case when product is not found
+            setProduct(null);
         }
     }, [id]);
 
@@ -28,7 +30,7 @@ function Productdetail() {
             <div className="text-center">
                 <div className="card-body">
                     <h1 className="card-title">{Product.Name}</h1>
-                    {/* Add additional product details here */}
+
                     <p className="card-text"></p>
                     <button className="btn btn-primary mx-3">{Product.Price} ₹</button>
                     <button className="btn btn-warning">Add to cart</button>

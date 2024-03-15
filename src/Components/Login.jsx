@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
 const Login = () => {
     const [formData, setFormData] = useState({
         email: '',
@@ -17,7 +18,7 @@ const Login = () => {
         fetch('http://localhost:3000/users')
             .then(response => response.json())
             .then(users => {
-                const foundUser = users.find(user => user.email === formData.email && user.password === formData.password);
+                const foundUser = users.find(user => user.email === formData.email && user.password.toString() === formData.password);
 
                 if (foundUser) {
                     alert('Login successful');
@@ -34,6 +35,9 @@ const Login = () => {
             });
     };
 
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
     return (
         <div className="container">
             <div className="row">
@@ -52,8 +56,7 @@ const Login = () => {
                                         placeholder="Enter Email"
                                         autoComplete="off"
                                         value={formData.email}
-                                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                                        required
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div className="mb-3 col-md-12">
@@ -64,8 +67,7 @@ const Login = () => {
                                         className="form-control"
                                         placeholder="Enter Password"
                                         value={formData.password}
-                                        onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                                        required
+                                        onChange={handleChange}
                                     />
                                 </div>
                                 <div className="col-md-12">
@@ -73,6 +75,7 @@ const Login = () => {
                                 </div>
                             </div>
                         </form>
+                        {!valid && <p>{errors.message}</p>}
                     </div>
                 </div>
             </div>

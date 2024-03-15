@@ -2,29 +2,7 @@
     "users": [
       { "email": "test@gmail.com", "password": 100 },
       {  "email": "test1@gmail.com", "password": 200 }
-    ], 
-
-    "filters" :[
-      {
-        "Category" : "Laptop Brand",
-        "items" :[
-          {"name" : "Laptop",
-            "value": "Lenovo"
-          }
-          ]
-        
-      },
-      {"Category": "ssd",
-        "items": [
-          {
-            "name": "512 Gb",
-            "value": "512gb"
-          }]
-      },
-      {"Category": "screen",
-        "items": [{"name" : "qhd", "value": "qhd"}]
-      }
-      ]
+    ]
   }
 
 

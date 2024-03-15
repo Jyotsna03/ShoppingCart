@@ -2,67 +2,83 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/js/dist/dropdown'
+import { filters } from './Data';
 
 
-const Class = () => {
+
+
+const Class = ({ setData }) => {
+  const filterByPrice = (minPrice, maxPrice) => {
+    const filteredItems = filters.filter(item => item.Price >= minPrice && item.Price <= maxPrice);
+    setData(filteredItems);
+  };
+
+  const filterByLaptopName = (laptopName) => {
+    const filteredItems = filters.filter(item => item.Name && item.Name.toLowerCase().includes(laptopName.toLowerCase()));
+    setData(filteredItems);
+  };
+
+  const filterBySSD = (ssdCapacity) => {
+    const filteredItems = filters.filter(item => item.SSD.name === ssdCapacity);
+    setData(filteredItems);
+  };
+
+  const filterByMemory = (memoryCapacity) => {
+    const filteredItems = filters.filter(item => item.memory.value === memoryCapacity);
+    setData(filteredItems);
+  };
+
   return (
     <>
       <div className='nav-bar'>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <div className="container-fluid">
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Price
                   </a>
-                  <ul class="dropdown-menu">
-
-                    <li><a class="dropdown-item" href="#">$0 - $500</a></li>
-                    <li><a class="dropdown-item" href="#">$501 - $1000</a></li>
-                    <li><a class="dropdown-item" href="#">$1001 - $1500</a></li>
-
+                  <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" onClick={() => filterByPrice(20000, 30000)}>₹20,000 - ₹30,000</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByPrice(30000, 50000)}>₹30,000 - ₹50,000</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByPrice(50000, 70000)}>₹50,000 - ₹70,000</button></li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Laptop Brand
                   </a>
-                  <ul class="dropdown-menu">
-
-                    <li><a class="dropdown-item" href="#">Lenovo</a></li>
-                    <li><a class="dropdown-item" href="#">HP</a></li>
-                    <li><a class="dropdown-item" href="#">Dell</a></li>
-                    <li><a class="dropdown-item" href="#">Asus</a></li>
-
+                  <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" onClick={() => filterByLaptopName('Lenovo')}>Lenovo</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByLaptopName('HP')}>HP</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByLaptopName('Dell')}>Dell</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByLaptopName('Asus')}>Asus</button></li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     SSD
                   </a>
-                  <ul class="dropdown-menu">
-
-                    <li><a class="dropdown-item" href="#">128GB</a></li>
-                    <li><a class="dropdown-item" href="#">256GB</a></li>
-                    <li><a class="dropdown-item" href="#">512GB</a></li>
-                    <li><a class="dropdown-item" href="#">1TB</a></li>
-
+                  <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" onClick={() => filterBySSD('128 GB')}>128GB</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterBySSD('256 GB')}>256GB</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterBySSD('512 GB')}>512GB</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterBySSD('1 TB')}>1TB</button></li>
                   </ul>
                 </li>
-                <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <li className="nav-item dropdown">
+                  <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     Memory
                   </a>
-                  <ul class="dropdown-menu">
-
-                    <li><a class="dropdown-item" href="#">4GB</a></li>
-                    <li><a class="dropdown-item" href="#">8GB</a></li>
-                    <li><a class="dropdown-item" href="#">16GB</a></li>
-
+                  <ul className="dropdown-menu">
+                    <li><button className="dropdown-item" onClick={() => filterByMemory('4gb')}>4GB</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByMemory('8gb')}>8GB</button></li>
+                    <li><button className="dropdown-item" onClick={() => filterByMemory('16gb')}>16GB</button></li>
                   </ul>
                 </li>
               </ul>
@@ -71,7 +87,6 @@ const Class = () => {
         </nav>
 
         <Link to={'/product'} className='brand'> Shopping Cart</Link>
-
 
         <Link to={'/cart'} className='cart' > Cart </Link>
       </div>
