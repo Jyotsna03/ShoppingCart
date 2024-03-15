@@ -23,3 +23,21 @@
     text-decoration: none;
     color:white;
 }
+
+.img{
+    display:flex;
+    justify-content:center ;
+    align-items: center;
+}
+
+.img img{
+   width:500px;
+   height: 500px; 
+}
+
+.con{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    gap:4rem;
+}
