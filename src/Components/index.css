@@ -9,7 +9,7 @@
 .brand{
     font-weight: bold;
     width: 20%;
-    text-align: center;
+    text-align:center;
     font-size: 1.5rem;
     text-decoration: none;
     color:white;
@@ -20,9 +20,10 @@
     width:30%;
     text-align:right;
     font-weight: bolder;
-    font-size:1.5rem;
-    text-decoration: none;
     color:white;
+    bottom:10%; 
+    margin-right: 5%; 
+    z-index: 100;
 }
 
 .img{

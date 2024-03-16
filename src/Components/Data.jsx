@@ -1,7 +1,7 @@
 const items = [
     {
         ID: 1,
-        Name: "Lenovo IdeaPad",
+        Name: "Lenovo IdeaPad ",
         Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 50000,
@@ -19,8 +19,8 @@ const items = [
     {
         ID: 2,
         Name: "Inspiron 14 2-in-1 Laptop",
-        Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
-        Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
+        Image: "https://cdn.moglix.com/p/0cpOYixcmUpfi-xxlarge.jpg",
+        Desc: "The laptop features a 2-in-1 design, allowing you to switch between laptop and tablet modes effortlessly. This flexibility makes it suitable for various tasks, including productivity, entertainment, and creativity.",
         Price: 63000,
         memory: {
             "name": "8 GB",
@@ -35,8 +35,8 @@ const items = [
     },
     {
         ID: 3,
-        Name: "IdeaPad Slim 3i Chromebook",
-        Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
+        Name: "Slim 3i Chromebook",
+        Image: "https://www.warehousestationery.co.nz/on/demandware.static/-/Sites-wsl-master-catalog/default/dw1192979b/4e/a6/W2901809_30.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 35000,
         memory: {
@@ -52,17 +52,17 @@ const items = [
     },
     {
         ID: 4,
-        Name: "Lenovo IdeaPad",
-        Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
-        Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
-        Price: 50000,
+        Name: "ASUS TUF Gaming",
+        Image: "https://images-eu.ssl-images-amazon.com/images/I/91zVSkGGZbS._AC_UL200_SR200,200_.jpg",
+        Desc: "ETUF Gaming is for those who demand superior durability, dependable stability and great gaming value.",
+        Price: 55000,
         memory: {
-            name: "Ryzen 7000",
+            name: "Intel Core i5",
             value: "8gb"
         },
         SSD: {
-            name: "256 GB",
-            value: "256gb"
+            name: "512 GB",
+            value: "512gb"
         },
         screen: "Anti-Glare, Non-Touch",
         color: "Black"
@@ -87,7 +87,7 @@ const items = [
     {
         ID: 6,
         Name: "ASUS VivoBook 15",
-        Image: "https://images-eu.ssl-images-amazon.com/images/I/71c0GSxtEEL._AC_UL200_SR200,200_.jpg",
+        Image: "https://in.store.asus.com/media/catalog/product/v/i/vivobook_15_x1502v_m1502y_product_photo_1k_quiet_blue_05_1_.jpg?width=439&height=439&store=en_IN&image-type=image",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 26990,
         memory: {

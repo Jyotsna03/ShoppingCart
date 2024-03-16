@@ -4,6 +4,7 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/dist/dropdown'
 import { filters } from './Data';
+import { SlBasket } from "react-icons/sl";
 
 
 
@@ -88,7 +89,7 @@ const Class = ({ setData }) => {
 
         <Link to={'/product'} className='brand'> Shopping Cart</Link>
 
-        <Link to={'/cart'} className='cart' > Cart </Link>
+        <Link to={'/cart'} className='cart' > <SlBasket size={40} /> </Link>
       </div>
     </>
   )

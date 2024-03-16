@@ -25,11 +25,12 @@ function Productdetail() {
     return (
         <div className="container con">
             <div className="img">
-                <img src={Product.img} alt={Product.Name} />
+                <img src={Product.Image} alt={Product.Name} />
             </div>
             <div className="text-center">
                 <div className="card-body">
                     <h1 className="card-title">{Product.Name}</h1>
+                    <p className="card-text">{Product.Desc}</p>
 
                     <p className="card-text"></p>
                     <button className="btn btn-primary mx-3">{Product.Price} ₹</button>
