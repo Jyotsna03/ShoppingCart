@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/dist/dropdown'
@@ -9,7 +9,11 @@ import { SlBasket } from "react-icons/sl";
 
 
 
-const Class = ({ setData }) => {
+
+function Class({ setData = () => { }, cart = [] }) {
+
+  //console.log(useLocation())
+  const location = useLocation();
   const filterByPrice = (minPrice, maxPrice) => {
     const filteredItems = filters.filter(item => item.Price >= minPrice && item.Price <= maxPrice);
     setData(filteredItems);
@@ -89,10 +93,18 @@ const Class = ({ setData }) => {
 
         <Link to={'/product'} className='brand'> Shopping Cart</Link>
 
-        <Link to={'/cart'} className='cart' > <SlBasket size={40} /> </Link>
+        <Link to={'/cart'} className='cart'>
+          <button type="button" className="btn btn-primary position-relative">
+            {cart.length}
+            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+
+              <span className="visually-hidden">unread messages</span>
+            </span>
+          </button>
+          <SlBasket size={40} /> </Link>
       </div>
     </>
-  )
+  );
 }
 
 export default Class;

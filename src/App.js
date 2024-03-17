@@ -9,16 +9,19 @@ import { filters } from './Components/Data';
 
 function App() {
   const [data, setData] = useState([...filters]);
+  const [cart, setCart] = useState([])
 
   return (
     <>
       <BrowserRouter>
-        <Navbar setData={setData} />
+
+        <Navbar setData={setData} cart={cart} />
         <Routes>
           <Route path='/' element={<Login />} />
-          <Route path='/product' element={<Product filters={data} />} />
-          <Route path='/product/:id' element={<Productdetail />} />
-          <Route path='/cart' element={<Cart />} />
+          <Route path='/product' element={<Product cart={cart} setCart={setCart} filters={data} />} />
+          <Route path='/product/:ID' element={<Productdetail />} />
+          <Route path='/cart' element={<Cart cart={cart} setCart={setCart} />} /
+          >
         </Routes>
       </BrowserRouter>
     </>

@@ -14,7 +14,7 @@ const items = [
             "value": "256gb"
         },
         "screen": "Anti-Glare, Non-Touch",
-        "color": "Black"
+        color: "Black"
     },
     {
         ID: 2,
@@ -48,7 +48,8 @@ const items = [
             value: "256gb"
         },
         color: "Platinum Grey",
-        processor: "Intel i7"
+        screen: "Anti-Glare, Non-Touch"
+
     },
     {
         ID: 4,
@@ -66,6 +67,7 @@ const items = [
         },
         screen: "Anti-Glare, Non-Touch",
         color: "Black"
+
     },
     {
         ID: 5,
