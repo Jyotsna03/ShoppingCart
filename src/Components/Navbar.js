@@ -3,37 +3,36 @@ import { Link, useLocation } from 'react-router-dom';
 import './index.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/js/dist/dropdown'
-import { filters } from './Data';
+import { filters, items } from './Data';
 import { SlBasket } from "react-icons/sl";
-
-
-
-
 
 function Class({ setData = () => { }, cart = [] }) {
 
   //console.log(useLocation())
   const location = useLocation();
   const filterByPrice = (minPrice, maxPrice) => {
-    const filteredItems = filters.filter(item => item.Price >= minPrice && item.Price <= maxPrice);
+    const filteredItems = items.filter(item => item.Price >= minPrice && item.Price <= maxPrice);
     setData(filteredItems);
+    console.log(filteredItems);
   };
 
   const filterByLaptopName = (laptopName) => {
-    const filteredItems = filters.filter(item => item.Name && item.Name.toLowerCase().includes(laptopName.toLowerCase()));
+    const filteredItems = items.filter(item => item.Name && item.Name.toLowerCase().includes(laptopName.toLowerCase()));
     setData(filteredItems);
+    console.log(filteredItems);
   };
 
   const filterBySSD = (ssdCapacity) => {
-    const filteredItems = filters.filter(item => item.SSD.name === ssdCapacity);
+    const filteredItems = items.filter(item => item.SSD.name === ssdCapacity);
     setData(filteredItems);
+    console.log(filteredItems);
   };
 
   const filterByMemory = (memoryCapacity) => {
-    const filteredItems = filters.filter(item => item.memory.value === memoryCapacity);
+    const filteredItems = items.filter(item => item.memory && item.memory.value === memoryCapacity);
     setData(filteredItems);
+    console.log(filteredItems);
   };
-
   return (
     <>
       <div className='nav-bar'>
@@ -81,7 +80,6 @@ function Class({ setData = () => { }, cart = [] }) {
                     Memory
                   </a>
                   <ul className="dropdown-menu">
-                    <li><button className="dropdown-item" onClick={() => filterByMemory('4gb')}>4GB</button></li>
                     <li><button className="dropdown-item" onClick={() => filterByMemory('8gb')}>8GB</button></li>
                     <li><button className="dropdown-item" onClick={() => filterByMemory('16gb')}>16GB</button></li>
                   </ul>
@@ -98,10 +96,10 @@ function Class({ setData = () => { }, cart = [] }) {
             {cart.length}
             <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
 
-              <span className="visually-hidden">unread messages</span>
+
             </span>
           </button>
-          <SlBasket size={40} /> </Link>
+          <SlBasket size={40} style={{ fontSize: '1.5rem' }} /> </Link>
       </div>
     </>
   );

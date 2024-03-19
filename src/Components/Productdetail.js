@@ -6,7 +6,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 function Productdetail() {
     const { id } = useParams();
-    const [Product, setProduct] = useState({});
+    const [Product, setProduct] = useState();
 
     useEffect(() => {
 

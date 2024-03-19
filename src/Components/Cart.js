@@ -1,9 +1,48 @@
-import React from 'react'
-import { Product } from './Product';
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
+import { items } from './Data';
+
 
 
 const Cart = ({ cart, setCart }) => {
+    const [totalPrice, setTotalPrice] = useState(0);
+
+    const removeFromCart = (productId) => {
+        const updatedCart = cart.filter(item => item.ID !== productId);
+        setCart(updatedCart);
+        updateTotalPrice(updatedCart);
+        console.log(updatedCart)
+    };
+
+    const incrementQuantity = (productId) => {
+        const updatedCart = cart.map(item => {
+            if (item.ID === productId) {
+                return { ...item, quantity: item.quantity + 1 };
+            }
+            return item;
+        });
+        setCart(updatedCart);
+        updateTotalPrice(updatedCart);
+    };
+
+    const decrementQuantity = (productId) => {
+        const updatedCart = cart.map(item => {
+            if (item.ID === productId && item.quantity > 1) {
+                return { ...item, quantity: item.quantity - 1 };
+            }
+            return item;
+        });
+        setCart(updatedCart);
+        updateTotalPrice(updatedCart);
+    };
+
+    const updateTotalPrice = (updatedCart) => {
+        const totalPrice = updatedCart.reduce((total, item) => {
+            return total + item.price * item.quantity;
+        }, 0);
+        setTotalPrice(totalPrice);
+    };
+
     return (
         <>
             <div className='container m-5' style={{ width: "54%" }}>
@@ -13,7 +52,8 @@ const Cart = ({ cart, setCart }) => {
                             <div className='text-center'>
                                 <div className="row">
 
-                                    <h1 className="text-center">Cart is empty</h1>
+                                    <h1 className="text-center">Cart is empty
+                                    </h1>
 
                                 </div>
                                 <Link to={"/product"} className='btn btn-warning '> Continue Shopping </Link>
@@ -24,7 +64,7 @@ const Cart = ({ cart, setCart }) => {
                         cart.map((product) => {
                             return (
                                 <>
-                                    <div className="card mb-3 my-5" style={{ width: '700px' }}>
+                                    <div key={product.id} className="card mb-3 my-5" style={{ width: '700px' }}>
                                         <div className="row g-0">
                                             <div className="col-md-4">
                                                 <img src={product.Image} className="img-fluid rounded-start" />
@@ -34,6 +74,11 @@ const Cart = ({ cart, setCart }) => {
                                                     <h5 className="card-title">{product.Name}</h5>
                                                     <p className="card-text">{product.desc}</p>
                                                     <button className='btn btn-primary mx-3'>{product.Price} ₹ </button>
+                                                    <button className='btn btn-success' onClick={() => incrementQuantity(product.ID)}>+</button>
+                                                    <span className="mx-2">{product.quantity}</span>
+                                                    <button className='btn btn-warning' onClick={() => decrementQuantity(product.ID)}>-</button>
+                                                    <button className='btn btn-danger ml-2' onClick={() => removeFromCart(product.ID)}>Remove</button>
+
                                                     <button
                                                         className='btn btn-warning'>Buy Now </button>
                                                 </div>

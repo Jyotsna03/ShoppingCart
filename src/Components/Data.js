@@ -5,6 +5,7 @@ const items = [
         Image: "https://images-eu.ssl-images-amazon.com/images/I/71VB1UTcYkL._AC_UL200_SR200,200_.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 50000,
+        quantity: 1,
         memory: {
             "name": "Ryzen 7000",
             "value": "8gb"
@@ -22,6 +23,7 @@ const items = [
         Image: "https://cdn.moglix.com/p/0cpOYixcmUpfi-xxlarge.jpg",
         Desc: "The laptop features a 2-in-1 design, allowing you to switch between laptop and tablet modes effortlessly. This flexibility makes it suitable for various tasks, including productivity, entertainment, and creativity.",
         Price: 63000,
+        quantity: 1,
         memory: {
             "name": "8 GB",
             "value": "8gb"
@@ -39,6 +41,7 @@ const items = [
         Image: "https://www.warehousestationery.co.nz/on/demandware.static/-/Sites-wsl-master-catalog/default/dw1192979b/4e/a6/W2901809_30.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 35000,
+        quantity: 1,
         memory: {
             name: "4gb",
             value: "4gb"
@@ -57,6 +60,7 @@ const items = [
         Image: "https://images-eu.ssl-images-amazon.com/images/I/91zVSkGGZbS._AC_UL200_SR200,200_.jpg",
         Desc: "ETUF Gaming is for those who demand superior durability, dependable stability and great gaming value.",
         Price: 55000,
+        quantity: 1,
         memory: {
             name: "Intel Core i5",
             value: "8gb"
@@ -75,6 +79,7 @@ const items = [
         Image: "https://www.khoslaonline.com/wp-content/uploads/2023/07/61-dgckBgL._SL1500_-1.jpg",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 36000,
+        quantity: 1,
         memory: {
             name: "Ryzen 7000",
             value: "8gb"
@@ -92,9 +97,10 @@ const items = [
         Image: "https://in.store.asus.com/media/catalog/product/v/i/vivobook_15_x1502v_m1502y_product_photo_1k_quiet_blue_05_1_.jpg?width=439&height=439&store=en_IN&image-type=image",
         Desc: "Everyday laptops for first-time users. High-performance laptops for serious gamers. Convertible PCs for those who like their entertainment on the go.",
         Price: 26990,
+        quantity: 1,
         memory: {
             name: "Intel i5",
-            value: "4gb"
+            value: "8gb"
         },
         SSD: {
             name: "1 TB",
