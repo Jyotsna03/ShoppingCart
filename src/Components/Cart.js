@@ -38,7 +38,7 @@ const Cart = ({ cart, setCart }) => {
 
     const updateTotalPrice = (updatedCart) => {
         const totalPrice = updatedCart.reduce((total, item) => {
-            return total + item.price * item.quantity;
+            return total + item.Price * item.quantity;
         }, 0);
         setTotalPrice(totalPrice);
     };
@@ -64,7 +64,7 @@ const Cart = ({ cart, setCart }) => {
                         cart.map((product) => {
                             return (
                                 <>
-                                    <div key={product.id} className="card mb-3 my-5" style={{ width: '700px' }}>
+                                    <div key={product.ID} className="card mb-3 my-5" style={{ width: '700px' }}>
                                         <div className="row g-0">
                                             <div className="col-md-4">
                                                 <img src={product.Image} className="img-fluid rounded-start" />
@@ -72,7 +72,7 @@ const Cart = ({ cart, setCart }) => {
                                             <div className="col-md-8">
                                                 <div className="card-body text-center">
                                                     <h5 className="card-title">{product.Name}</h5>
-                                                    <p className="card-text">{product.desc}</p>
+                                                    <p className="card-text">{product.Desc}</p>
                                                     <button className='btn btn-primary mx-3'>{product.Price} ₹ </button>
                                                     <button className='btn btn-success' onClick={() => incrementQuantity(product.ID)}>+</button>
                                                     <span className="mx-2">{product.quantity}</span>
@@ -98,6 +98,7 @@ const Cart = ({ cart, setCart }) => {
                         justifyContent: 'center',
                         alignItems: 'center'
                     }}>
+                        <div> Total Price : {totalPrice} </div>
                         <button className='btn btn-warning mx-5'> Checkout </button>
                         <button onClick={() => setCart("")} className='btn btn-danger'> Clear Cart </button>
                     </div>
